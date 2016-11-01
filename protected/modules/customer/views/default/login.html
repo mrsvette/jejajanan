@@ -1,0 +1,83 @@
+<section class="section single-wrap">
+	<div class="container">
+		<div class="page-title">
+			<div class="row">
+				<div class="col-sx-12 text-center">
+					<h3>Login Account</h3>
+					<div class="bread">
+						<ol class="breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">Login Account</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content-top">
+			<div class="row">
+				<div class="col-sx-6 col-sm-6">
+					<div class="custommenu hidden-xs hide">
+						<a id="showLeft" href="#" title="" class="bt-menu-trigger"><i class="fa fa-bars"></i> <img src="upload/fav.png" alt=""></a>
+					</div>
+				</div> 
+				<div class="col-sm-6 col-xs-12 cen-xs text-right">
+					<ul class="list-inline social">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+  						<li><a href="#"><i class="fa fa-behance"></i></a></li>
+						<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+					</ul>
+				</div>
+			</div><!-- end row -->
+		</div><!-- end content top -->
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<div class="page-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+							<div class="widget content">
+								<div class="widget-title">
+									<h4>{{ call('Yii','t', ['CustomerModule.customer','Please enter your login detail']) }}</h4>
+								</div><!-- end widget-title -->
+								<div class="login-form">
+			{% if App.user.hasFlash('login') %}
+			<div class="alert alert-success alert-block">
+				{{ App.user.getFlash('login') |raw }}
+			</div>
+			{% endif %}	
+			{% set form = this.beginWidget('CActiveForm', {
+					'id':'login-form',
+					'enableClientValidation':true,
+					'clientOptions':{
+						'validateOnSubmit':true,
+					},
+					'htmlOptions':{'role':'login'}
+				}) %}
+		
+			{{ form.errorSummary(model,null,null,{'class':'alert alert-warning alert-block alert-dismissable fade in'}) |raw }}
+			<div class="form-group">
+				{{ form.labelEx(model,'email') |raw }}
+				{{ form.textField(model,'email',{'class':'form-control input-lg'}) |raw }}
+				<span class="fa fa-user"></span>
+			</div>
+			<div class="form-group">
+				{{ form.labelEx(model,'password') |raw }}
+				{{ form.passwordField(model,'password',{'class':'form-control input-lg'}) |raw }}
+				<span class="fa fa-lock"></span>
+			</div>
+			<div class="submit_section">
+				{{ C.Html.submitButton(call('Yii','t',['global','Login Account']),{'style':'min-width:100px;','id':'tombol','class':'btn btn-primary'}) |raw }}
+			</div>
+		    {% do this.endWidget() %}
+                                            </div><!-- end login-form -->
+											<p class="text-right mt10">{{ C.Html.link(call('Yii','t',['CustomerModule.customer','Have a problem with your login account?']),'#',{'class':'request-password'}) |raw }}</p>
+                                        </div><!-- end widget -->
+                                    </div><!-- end col -->
+                                </div><!-- end row -->
+                            </div>
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+            </div><!-- end container -->
+        </section>

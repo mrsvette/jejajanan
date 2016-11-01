@@ -1,0 +1,53 @@
+{
+    "id":           "contact",
+    "name":         "Contact Module",
+    "description":  "Contact module for jagung bakar 1.1.2. <br/>Please activate email module to use this contact module.",
+    "icon":     	"icon.png",
+    "author":       "farid efendi",
+    "author_url":   "http://jagungbakar.web.id/",
+    "license":      "GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
+    "version":      "1.0.0",
+	"config"		: {
+			0:{
+				"title":"Admin email for contact form",
+				"name":"contact_admin_email",
+				"value":null,
+				"type":"string",
+				"placeholder":"admin@domain.com",
+			},
+			1:{
+				"title":"Save contact data to database",
+				"name":"contact_db_saved",
+				"value":1,
+				"type":"string",
+				"options":{
+					0:"No",
+					1:"Yes",
+				},
+			},
+			2:{
+				"title":"Template for contact email to admin",
+				"name":"contact_email_template",
+				"value":"mod_contact_admin",
+				"type":"string",
+				"placeholder":"Template contact email",
+			},
+			3:{
+				"title":"Template for contact email to client",
+				"name":"contact_email_template_client",
+				"value":"mod_contact_client",
+				"type":"string",
+				"placeholder":"Template contact email",
+			},
+			4:{
+				"title":"Redirect submission to thankyou page",
+				"name":"contact_thankyou_page",
+				"value":1,
+				"type":"string",
+				"options":{
+					0:"No",
+					1:"Yes",
+				},
+			},
+		}
+}

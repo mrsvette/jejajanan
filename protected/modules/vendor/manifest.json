@@ -1,0 +1,56 @@
+{
+    "id":           "vendor",
+    "name":         "Vendor Module",
+    "description":  "Vendor module for jagung bakar 1.1.2<br/>Please activate market module to use this vendor module.",
+    "icon":     	"icon.png",
+    "author":       "farid efendi",
+    "author_url":   "http://jagungbakar.web.id/",
+    "license":      "GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
+    "version":      "1.0.0",
+	"config"		: {
+			0:{
+				"title":"Upload Folder Path",
+				"name":"vendor_upload_path",
+				"value":"uploads/images/vendor",
+				"type":"string",
+			},
+			1:{
+				"title":"Max Upload File Size (bytes)",
+				"name":"vendor_max_file_size",
+				"value":3000000,
+				"type":"number",
+				"placeholder":"Max upload file size in bytes",
+			},
+			2:{
+				"title":"Allowed File Type",
+				"name":"vendor_allowed_file_type",
+				"value":"jpg, jpeg, png",
+				"type":"string",
+				"placeholder":"Allowed file type",
+			},
+			3:{
+				"title":"Ideal image width (px)",
+				"name":"vendor_product_image_width",
+				"value":520,
+				"type":"number",
+				"placeholder":"520px",
+			},
+			4:{
+				"title":"Ideal image height (px)",
+				"name":"vendor_product_image_height",
+				"value":600,
+				"type":"number",
+				"placeholder":"600px",
+			},
+			5:{
+				"title":"Resize image to ideal size",
+				"name":"vendor_product_image_force_resize",
+				"value":1,
+				"type":"number",
+				"options":{
+					0:"No",
+					1:"Yes",
+				},
+			},
+		}
+}
